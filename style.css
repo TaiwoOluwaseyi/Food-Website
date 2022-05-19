@@ -4,11 +4,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   text-decoration: none;
   outline: none;
-  font-family: "Nunito" sans-serif;
-  font-family: 400;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
 }
 
 html {
@@ -267,16 +267,16 @@ html {
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
   justify-content: space-evenly;
   margin-top: 10rem;
 }
 
 .gallery-link {
   position: relative;
-  margin: 4rem 1rem;
+  margin: 4rem auto;
 }
 
 .gallery-link::before{
@@ -466,6 +466,10 @@ html {
     flex-wrap: wrap;
   }
 
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .card {
     margin: 5rem;
   }
@@ -516,9 +520,14 @@ html {
   }
 }
 
-@media(max-width: 5500px) {
+@media(max-width: 550px) {
   html {
     font-size: 40%;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    /* align-items: center; */
   }
 
   .navbar-link {
